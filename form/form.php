@@ -1,4 +1,69 @@
-/* Variables */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qneiform Form</title>
+    <link rel="stylesheet" type="text/css" href="form_styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar-desktop">
+            <div class="logo-container">
+                <a href="../index.html"><img src="../media/SVG/qneiform_logo_final_Logo-Typo-White.svg" alt="Logo"></a>
+            </div>
+        </nav>
+   </header>
+
+    <div  class="container" id="container">
+
+        <h2>Join waiting list</h2>
+        
+        <form  action="email.php" name="contactFormEmail" method="post">
+                 
+                <input type="text" id="name" name="name" required placeholder="Name"> 
+
+                <input type="email" id="email" name="email" required placeholder="E-mail address">
+
+                <input id="submit" type="submit" name="send" value="Submit">
+
+        </form>
+
+        <a href="../index.html">
+            <h3><- Back to Home page</h3>
+        </a>
+
+
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Collect form data
+            $name = $_POST["name"];
+            $email = $_POST["email"];
+        
+            // Compose email
+            $to = "bebeqkacqkac@gmail.com.com";
+            $subject = "New Form Submission";
+            $headers = "From: $email\r\n";
+            $headers .= "Reply-To: $email\r\n";
+            $headers .= "Content-type: text/html\r\n";
+        
+            $body = "<p><strong>Name:</strong> $name</p>";
+            $body .= "<p><strong>Email:</strong> $email</p>";
+        
+            // Send email
+            $mailSuccess = mail($to, $subject, $body, $headers);
+        
+            // Check if the email was sent successfully
+            if ($mailSuccess) {
+                echo "Thank you for your submission!";
+            } else {
+                echo "Error sending the email. Please try again later.";
+            }
+        }
+        ?>
+
+        <style>
+            /* Variables */
 :root {
   --blue-color: #0071F5;
   --white-color: #F5F5F5;
@@ -26,6 +91,10 @@ header{
   padding: 0;
 }
 
+a{
+    text-decoration: none;  
+}
+
 nav {    
   display: flex;
   justify-content: center;
@@ -43,17 +112,6 @@ nav {
   padding: 0;
   margin: 0;
   height: var(--navbar-height);
-}
-
-#back-home{
-  color: #004AA0;
-  text-decoration: none;
-  position: absolute;
-  bottom: 0;
-  left: 2vw;
-}
-#back-home:hover{
-  color: #0071F5;
 }
 
 
@@ -80,6 +138,10 @@ nav {
   #menu-desktop a {
       display: none;}
 
+
+
+
+
 }
 
 
@@ -87,7 +149,7 @@ nav {
 
 body {
     background-color: var(--background-color);
-    background-image: url(../media/background_shapes_dark.png);
+    background-image: url(../media/background_shapes_zoomed.png);
     background-size: cover;
     /*background: radial-gradient(ellipse at bottom, #07111d 0%, #020307 100%);*/
     overflow-x: hidden;
@@ -108,10 +170,18 @@ h2{
 }
 
 h3{
-  font-size: 1vw;
-  margin-bottom: 1vw;
+  font-size: 0.8vw;
+  color: var(--blue-color);
+  text-align: left;
+  padding: 0;
+  margin: 1vw;
+  margin-top: 0;
 }
 
+h3:hover{
+  color: var(--dark-blue-color);
+
+}
   
 
 .input-row{
@@ -224,3 +294,9 @@ button:hover {
   }
 }
 
+
+        </style>
+
+    
+</body>
+</html>

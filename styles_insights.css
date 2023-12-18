@@ -1,0 +1,234 @@
+:root {
+    --blue-color: #0071F5;
+    --white-color: #F5F5F5;
+    --grey-color:  #b6b4b4;
+    --light-blue: #cfd8e2;
+    --light-blue-gradient: #8faccc;
+    --dark-blue-color: #004AA0;
+    --background-color: #030C1D;
+  }
+
+
+.game-teaser {
+    
+    /*background-image: linear-gradient(45deg, var(--background-color), #030C1D);
+    background: radial-gradient(ellipse at bottom, #033064 0%, #030C1D 100%);*/
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8vw;
+}
+
+
+
+.screenshot img{
+    height: 25vw;
+    border: solid #8faccc 2px;
+    border-radius: 1vw;
+}
+
+.description-card{
+    flex: 3;
+}
+
+.screenshot{
+    flex: 7; 
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.card{
+    width: 20vw;
+    height: 20vw;
+    background-color: var(--light-blue);
+    border-radius: 0.8vw;
+    margin: 2vw;
+    transition: all 0.2s ease-in-out;
+    padding: 1vw;
+    position: relative;
+}
+
+.card:hover{
+    background-color: var(--light-blue);
+    transform: translate(0, -0.8vw);
+    box-shadow: 0 0.5vw 0 var(--blue-color);
+}
+
+.card h2{
+    font-size: 1.5vw;
+    text-decoration: none;
+    color: var(--background-color);
+    padding: 0;
+    margin: 0.5vw;
+} 
+
+.card p{
+    margin: 0.5vw;
+    font-size: 1.2vw;
+    text-decoration: none;
+    color: var(--background-color);
+    padding: 0;
+} 
+
+.card .link{
+    position: absolute;
+    left: 1vw;
+    bottom: 0vw;
+    font-weight: 500;
+    font-size: 1.4vw;
+    color: var(--blue-color)
+}
+
+.card .link:hover{
+    color: var(--dark-blue-color);
+}
+
+.card .details{
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+}
+
+.card .type{
+    margin: 0 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blue-color);
+    border-radius: 1vw;
+    width: fit-content;
+    padding: 0 0.7vw;
+    height: 2vw;
+}
+
+
+.card .type svg{
+    height: 1.2vw;
+    fill: var(--white-color);
+}
+
+.card .type img{
+    height: 1.2vw;
+    fill: var(--white-color);
+}
+
+
+.card .type p{
+    padding: 0.2vw;
+    color: var(--white-color);
+}
+
+.card .time{
+    margin-right: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
+
+.card .time svg{
+    height: 1.2vw;
+    fill: var(--background-color);
+}
+
+.card .time p{
+    padding: 0.3vw;
+    color: var(--background-color);
+}
+
+@media screen and (max-width: 768px) {
+
+    .game-teaser {
+        flex-direction: column;
+    }
+
+    .screenshot img{
+        width: 80vw;
+        height: auto;
+    }
+
+    .card{
+        width: 70vw;
+        height: 50vw;
+        background-color: var(--light-blue);
+        border-radius: 2vw;
+        margin: 2vw;
+        transition: all 0.2s ease-in-out;
+        padding: 5vw;
+        position: relative;
+    }
+
+    .card h2{
+        font-size: 5vw;
+        text-decoration: none;
+        color: var(--background-color);
+        padding: 0;
+    } 
+    
+    .card p{
+        font-size: 4vw;
+        text-decoration: none;
+        color: var(--background-color);
+        padding: 0;
+    } 
+
+    .card .link{
+        position: absolute;
+        left: 4vw;
+        bottom: 0vw;
+        font-weight: 500;
+        font-size: 5vw;
+        color: var(--blue-color)
+    }
+
+    .card .type{
+        margin-right: 3vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--blue-color);
+        border-radius: 5vw;
+        width: 16vw;
+        height: 8vw;
+    }
+    
+    
+    .card .type svg{
+        height: 3vw;
+    }
+
+    .card .type img{
+        height: 3vw;
+    }
+
+    .card .type{
+        padding: 0.2vw 3vw;
+    }
+
+    .card h2{
+        margin:  2vw 0
+    }
+
+    .card p{
+        margin:  2vw 0
+    }
+
+    .card .type p{
+        padding: 3vw;
+        color: var(--white-color);
+    }
+
+    .card .time svg{
+        height: 3vw;
+        fill: var(--background-color);
+    }
+
+    .card .time p{
+        padding: 1vw;
+        color: var(--background-color);
+    }
+}

@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qneiform Form</title>
     <link rel="stylesheet" type="text/css" href="form_styles.css">
-    <script src="login_script.js"></script>
 </head>
 <body>
     <header>
         <nav class="navbar-desktop">
             <div class="logo-container">
-                <a href="#about"><img src="../media/SVG/qneiform_logo_final_Logo-Typo-White.svg" alt="Logo"></a>
+                <a href="../index.html"><img src="../media/SVG/qneiform_logo_final_Logo-Typo-White.svg" alt="Logo"></a>
             </div>
         </nav>
    </header>
@@ -19,8 +18,10 @@
     <div  class="container" id="container">
 
         <h2>Join waiting list</h2>
+
         
-        <form action="email.php" name="contactFormEmail" method="post">
+        
+        <form  action="https://formsubmit.co/el/pekize" name="contactFormEmail" method="post">
                  
                 <input type="text" id="name" name="name" required placeholder="Name"> 
 
@@ -29,7 +30,12 @@
                 <input id="submit" type="submit" name="send" value="Submit">
 
         </form>
+        <a id="back-home" href="../index.html">
+            <h3>← Back to Home page</h3>
+        </a>
 
+    </div>
+    
     
 </body>
 </html>

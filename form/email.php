@@ -23,8 +23,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Error sending the email. Please try again later.";
     }
-} else {
-    // If someone tries to access this script directly without submitting the form
-    echo "Invalid request";
 }
 ?>
