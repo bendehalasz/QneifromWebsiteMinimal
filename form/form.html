@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qneiform Form</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('k_Zzum-K19HSUGwBL');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_qmhsldp', 'template_2b7mtwp', this)
+                    .then(function() {
+                        
+                        const success = document.getElementById("feedback")
+                        success.classList.remove("hidden");
+                    }, function(error) {
+                        
+                        const errorMessage = document.getElementById("feedback_error")
+                        errorMessage.classList.remove("hidden");
+                    });
+            });
+        }
+    </script>
     <link rel="stylesheet" type="text/css" href="form_styles.css">
 </head>
 <body>
@@ -21,15 +48,14 @@
 
         
         
-        <form  action="https://formspree.io/f/xleqrjyb" name="contactFormEmail" method="post">
-                 
-                <input type="text" id="name" name="name" required placeholder="Name"> 
-
-                <input type="email" id="email" name="email" required placeholder="E-mail address">
-
-                <input id="submit" type="submit" name="send" value="Submit">
-
+        <form id="contact-form">
+            <input type="hidden" name="contact_number">
+            <input type="email" name="user_email" placeholder="E-mail address">
+            <input id="submit" type="submit" value="Send">
         </form>
+
+        <p class="hidden" id="feedback">✔ Your submission was successful.</p>
+        <p class="hidden" id="feedback_error">✘ An error occured, please try again later.</p>
         <a id="back-home" href="../index.html">
             <h3>← Back to Home page</h3>
         </a>
@@ -37,5 +63,7 @@
     </div>
     
     
+    
 </body>
+
 </html>

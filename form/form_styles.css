@@ -58,29 +58,7 @@ nav {
 
 
 
-@media screen and (max-width: 768px) {
 
-
-  nav {
-      height: var(--navbar-height-mobile);
-  }
-  
-  .logo-container img{
-      height: var(--navbar-height-mobile);
-  }
-
-  body {
-      margin-top: var(--navbar-height-mobile);
-  }
-  
-  header{
-      height: var(--navbar-height-mobile);    
-  }
-
-  #menu-desktop a {
-      display: none;}
-
-}
 
 
 
@@ -127,7 +105,7 @@ h3{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 25vw;
-    padding: 2vw;
+    padding: 3vw;
     border-radius: 1vw;
     background-color: #030c1da9;
     z-index: 2;
@@ -164,6 +142,7 @@ input {
 
 #submit{
   background-color: #024eac;
+  margin-bottom: 0;
 }
 
 #submit:hover{
@@ -196,10 +175,90 @@ button:hover {
     display: none;
 }
 
+#feedback{
+  color: #0071F5;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1vw;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2vw;
+}
+
+#feedback_error{
+  color: #b90b1a;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1vw;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2vw;
+}
+
+@media screen and (max-width: 768px) {
+
+
+  #feedback{
+    color: #0071F5;
+    text-align: center;
+    font-weight: 500;
+    font-size: 3vw;
+    margin: 1vw;
+    padding: 0;
+    margin-bottom: 2vw;
+  }
+  
+  #feedback_error{
+    color: #b90b1a;
+    text-align: center;
+    font-weight: 500;
+    font-size: 3vw;
+    margin: 1vw;
+    padding: 0;
+    margin-bottom: 2vw;
+  }
+
+  nav {
+      height: var(--navbar-height-mobile);
+  }
+  
+  .logo-container img{
+      height: var(--navbar-height-mobile);
+  }
+
+  body {
+      margin-top: var(--navbar-height-mobile);
+  }
+  
+  header{
+      height: var(--navbar-height-mobile);    
+  }
+
+  #menu-desktop a {
+      display: none;}
+
+  h2{
+    font-size: 5vw;
+    color: var(--white-color);
+    text-align: center;
+    padding: 0;
+    margin: 3vw;
+    margin-top: 0;
+  }
+  
+  h3{
+    font-size: 3vw;
+    margin-bottom: 1vw;
+    margin-left: 5vw;
+  }
+
+}
+
 @media (max-width: 767px) {
     .container {
-        width: 90vw;
+        width: 80vw;
         border-radius: 2vw;
+        padding: 6vw;
     }
 
     img{

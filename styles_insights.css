@@ -22,18 +22,22 @@
 
 
 
-.screenshot img{
-    height: 25vw;
-    border: solid #8faccc 2px;
+.img-container{
+    height: 20vw;
+    width: 40vw;
+    padding: 1vw;
     border-radius: 1vw;
+    background-image: url("./media/codex_game_screenshot_close.png");
+    background-position: center;
+    transition: background-position 0.5s ease;
 }
 
 .description-card{
     flex: 3;
 }
 
-.screenshot{
-    flex: 7; 
+.img-container{
+    flex: 6; 
 }
 
 a{
@@ -146,7 +150,7 @@ a{
         flex-direction: column;
     }
 
-    .screenshot img{
+    .img-container img{
         width: 80vw;
         height: auto;
     }

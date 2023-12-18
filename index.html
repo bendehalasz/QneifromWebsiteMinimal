@@ -53,9 +53,8 @@
     <!-- Tile 2-->
 
     <div class="game-teaser">
-
-        <div class="screenshot">
-            <img src="./media/codex_game_screenshot.png" alt="">
+        
+        <div class="img-container">
         </div>
         
         <div class="description-card">
@@ -81,6 +80,15 @@
         </div>
         
     </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrollValue = window.scrollY;
+            const newSize = 70 + scrollValue * 0.06; // Adjust the multiplier to control the zoom speed
+    
+            document.querySelector('.img-container').style.backgroundSize = `${newSize}%`;
+        });
+    </script>
 
     
     <footer class="site-footer">
