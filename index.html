@@ -51,44 +51,70 @@
 
     <!-- Tile 2-->
 
-    <div class="game-teaser">
-        
-        <div class="img-container">
-            
-        </div>
-        
-        <div class="description-card">
-            <a href="https://london-codex-game.vercel.app/londonfinance" target="_blank">
-                <div class="card">
-                    <h2 class="title">The London Finance Universe</h2>
-                    <div class="details">
-                        <div class="type">
-                            <img src="./media/SVG/game-controller-round-795-svgrepo-com.svg" alt="">
-                            <p>Game</p>
+    <div class="game-teaser-video">
+        <div id="bound-two" class="scroll-bound">
+            <div class="content">
+                <video width="600" muted preload>
+                    <source src="./media/mapvideo.mp4" type="video/mp4">
+                </video>
+                <div id="description-card" class="description-card">
+                    <a href="https://game.qneiform.com" target="_blank">
+                        <div class="card">
+                            <h2 class="title">The London Finance Universe</h2>
+                            <div class="details">
+                                <div class="type">
+                                    <img src="./media/SVG/game-controller-round-795-svgrepo-com.svg" alt="">
+                                    <p>Game</p>
+                                </div>
+                                <div class="time">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                                        <path
+                                            d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z">
+                                        </path>
+                                    </svg>
+                                    <p>10 min</p>
+                                </div>
+                            </div>
+                            <p class="summary">Ahead of launching our platform in Q1 2024, test your knowledge of
+                                the London
+                                finance landscape with our latest game.</p>
+                            <p class="link">Play Game ›</p>
                         </div>
-                        <div class="time">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-                                <path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"></path>
-                            </svg>
-                            <p>10 min</p>
-                        </div>
-                    </div>
-                    <p class="summary">Ahead of launching our platform in Q1 2024, test your knowledge of the London finance landscape with our latest game.</p>
-                    <p class="link">Play Game ›</p>
+                    </a>
                 </div>
-            </a>
+            </div>
         </div>
-        
-    </div>
+        <script>
+            window.onscroll = () => {
+                bound = document.querySelector("#bound-two");
+                video = document.querySelector("#bound-two video");
+                const container = document.querySelector("#description-card"); // Select your div
 
-    <script>
-        window.addEventListener('scroll', function() {
-            const scrollValue = window.scrollY;
-            const newSize = 70 + scrollValue * 0.06; // Adjust the multiplier to control the zoom speed
-    
-            document.querySelector('.img-container').style.backgroundSize = `${newSize}%`;
-        });
-    </script>
+                const scrollVideo = () => {
+                    if (video.duration) {
+                        const distanceFromTop = window.scrollY + bound.getBoundingClientRect().top;
+                        const rawPercentScrolled = (window.scrollY - distanceFromTop) / (bound.scrollHeight - window.innerHeight) * 1.3;
+                        const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 1);
+                        video.currentTime = video.duration * percentScrolled ;
+                    }
+                };
+
+                const checkScrollForFadeIn = () => {
+                    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                    if (scrollPercent >= 78) {
+                        container.classList.add("fadeIn"); // Add class to fade in
+                    } else {
+                        container.classList.remove('fadeIn')
+                    }
+                };
+
+                scrollVideo();
+                checkScrollForFadeIn();
+            };
+
+        </script>
+
+    </div>
 
     
     <footer class="site-footer">
