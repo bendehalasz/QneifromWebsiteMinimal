@@ -8,6 +8,9 @@
     --background-color: #030C1D;
   }
 
+  button {
+    cursor: pointer;
+  }
 
   .game-teaser {
     
